@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        } 
+          button{
+            width:40px;
+            height:40px;
+            border-radius: 100px;
+            border-style: none;
+            background-color: rgb(57, 55, 55);
+            color: white;
+            text-align: center;
+            font-size: 15px;
+          }
+          .char{
+            background-color: orange;
+          }
+          .text{
+            font-size: 13px;
+          }
+          body{
+            margin-top: 70px;
+          }
+        </style>
+    </head>
+    <body>
+        <p class="calculator">Calculator</p>
+        <div>
+            <button onclick="
+                calculate('1');
+                ">1</button>
+            <button onclick="
+                calculate('2');
+                ">2</button>
+            <button onclick="
+                calculate('3');
+                ">3</button>
+            <button class="char"
+            onclick="calculate('+');
+                ">+</button>
+        </div>
+        <br>
+        <div>
+            <button onclick="
+                calculate('4');
+                ">4</button>
+            <button onclick="
+                calculate('5');
+                ">5</button>
+            <button onclick="
+                calculate('6');
+                ">6</button>
+            <button class="char"
+            onclick="calculate('-');
+                ">-</button>
+        </div>
+        <br>
+        <div>
+            <button onclick="
+                calculate('7');
+                ">7</button>
+            <button onclick="
+                calculate('8');
+                ">8</button>
+            <button onclick="
+                calculate('9');
+                ">9</button>
+            <button class="char"
+            onclick="calculate('*');
+                ">*</button>
+        </div>
+        <br>
+        <div>
+            <button onclick="
+                calculate('0');
+                ">0</button>
+            <button onclick="
+                calculate('.');
+                ">.</button>
+            <button onclick="
+              calculate('=');
+              //calculation='';
+            ">=</button>
+            <button class="char"
+            onclick="calculate('/');
+                ">/</button>
+        </div>
+        <br>
+        <button class="text"
+        onclick="calculate('clear');
+          console.log('cleared..');
+        ">clear</button>
+        <script>
+            let calculation='';
+            function calculate(parameter){
+               if(parameter === '='){
+                 calculation=eval(calculation);
+                 document.querySelector('.calculator').innerHTML=calculation;
+               } 
+               else if(parameter === 'clear'){
+                calculation='';
+                document.querySelector('.calculator').innerHTML=calculation;
+               }
+               else{
+                calculation+=parameter;
+                document.querySelector('.calculator').innerHTML=calculation;
+               }
+            }
+        </script>
+    </body>
+</html>
