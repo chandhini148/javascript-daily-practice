@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registration Page</title>
+
+    <style>
+        body {
+            background-color: #555;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+
+        .register-container {
+            background-color: #fff;
+            width: 450px;
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+
+        .register-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .register-header h1 {
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .input-group input[type="text"],
+        .input-group input[type="password"],
+        .input-group input[type="email"],
+        .input-group select,
+        .input-group textarea {
+            width: 100%;
+            font-size: 16px;
+            border: 1px solid #555;
+            border-radius: 4px;
+            padding: 12px 16px;
+            box-sizing: border-box;
+            margin-bottom: 5px;
+        }
+
+        .input-group textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            margin-top: 8px;
+        }
+
+        .dob {
+            display: flex;
+            gap: 5px;
+        }
+
+        .dob select {
+            width: auto;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 3px;
+            display: none;
+        }
+
+
+        .button-group {
+            display: flex;
+            justify-content: space-around;
+            margin: 10px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 16px;
+            border: none;
+            margin: 5px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn-register {
+            background-color: #1f6cd8;
+        }
+
+        .btn-reset {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="register-container">
+        <div class="register-header">
+            <h1>Registration Form</h1>
+            <p>Student Registration Details</p>
+        </div>
+
+        <form id="registerForm">
+            <!-- NAME -->
+            <div class="input-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" placeholder="Enter Your Name">
+                <div class="error-message" id="name-error">
+                </div>
+
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" placeholder="Enter Your Password">
+                <div class="error-message" id="password-error">
+                </div>
+            </div>
+
+            <!-- EMAIL -->
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Enter Your Email">
+                <div class="error-message" id="email-error">
+                </div>
+            </div>
+
+            <!-- PHONE -->
+            <div class="input-group">
+                <label for="phone">Phone Number:</label>
+                <input type="text" name="phone" id="phone" placeholder="Enter Your Phone Number">
+                <div class="error-message" id="phone-error">
+                </div>
+            </div>
+
+
+            <!-- Gender -->
+            <div class="input-group">
+                <label>Gender:</label>
+                <div class="radio-group">
+                    <input type="radio" name="Gender" value="male">
+                    Male
+                    <input type="radio" name="Gender" value="female">
+                    Female
+                </div>
+
+                <div class="error-message" id="Gender-error">
+                </div>
+
+            </div>
+
+
+            <!-- DATE OF BIRTH -->
+
+            <div class="input-group">
+
+                <label>Date of Birth:</label>
+
+                <div class="dob">
+
+                    <select id="day" name="day">
+                        <option value="">Day</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+
+
+                    <select id="month" name="month">
+                        <option value="">Month</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+
+
+                    <select id="year" name="year">
+
+                        <option value="">Year</option>
+                        <option value="2026">2026</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                    </select>
+                </div>
+                <div class="error-message" id="dob-error">
+                </div>
+            </div>
+
+
+            <!-- LANGUAGES -->
+            <div class="input-group">
+                <label>Languages Known:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="language" value="english">
+                    English
+                    <input type="checkbox" name="language" value="telugu">
+                    Telugu
+                    <input type="checkbox" name="language" value="hindi">
+                    Hindi
+                    <input type="checkbox" name="language" value="tamil">
+                    Tamil
+                </div>
+                <div class="error-message" id="language-error">
+                </div>
+            </div>
+
+            <!-- ADDRESS -->
+            <div class="input-group">
+                <label for="address">Address:</label>
+                <textarea name="address" id="address" placeholder="Enter Your Address"></textarea>
+                <div class="error-message" id="address-error">
+                </div>
+            </div>
+
+
+            <!-- BUTTONS -->
+            <div class="button-group">
+                <button type="submit" class="btn btn-register">
+                    Register
+                </button>
+                <button type="reset" class="btn btn-reset">
+                    Reset
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Get Form
+        const registerForm = document.getElementById("registerForm");
+
+        // Form Submit
+        registerForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            if (validateForm()) {
+                alert("Registration Successful!");
+                registerForm.reset();
+            }
+        });
+
+        // Main Validation Function
+        function validateForm() {
+            let isValid = true;
+            // Validate Name
+            if (!validateName()) {
+                isValid = false;
+            }
+
+            // Validate Password
+            if (!validatePassword()) {
+                isValid = false;
+            }
+
+            // Validate Email
+            if (!validateEmail()) {
+                isValid = false;
+            }
+
+            // Validate Phone
+            if (!validatePhone()) {
+                isValid = false;
+            }
+
+            // Validate Gender
+            if (!validateGender()) {
+                isValid = false;
+            }
+
+            // Validate Date of Birth
+            if (!validateDOB()) {
+                isValid = false;
+            }
+
+            // Validate Languages
+            if (!validateLanguages()) {
+                isValid = false;
+            }
+
+
+            // Validate Address
+            if (!validateAddress()) {
+                isValid = false;
+            }
+            return isValid;
+        }
+
+
+
+        // NAME VALIDATION
+        function validateName() {
+            const name =
+                document.getElementById("name").value.trim();
+            const error =
+                document.getElementById("name-error");
+            const namePattern =
+                /^[A-Za-z ]{3,50}$/;
+            if (name === "") {
+                error.textContent =
+                    "Please enter your name.";
+                error.style.display = "block";
+                return false;
+            }
+
+
+            if (!namePattern.test(name)) {
+                error.textContent =
+                    "Name must contain only alphabets.";
+                error.style.display = "block";
+                return false;
+            }
+            error.style.display = "none";
+            return true;
+        }
+
+        // PASSWORD VALIDATION
+        function validatePassword() {
+            const password =
+                document.getElementById("password").value.trim();
+            const error =
+                document.getElementById("password-error");
+            if (password === "") {
+                error.textContent =
+                    "Please enter your password.";
+                error.style.display = "block";
+                return false;
+            }
+
+            if (password.length < 6) {
+                error.textContent =
+                    "Password must be at least 6 characters.";
+                error.style.display = "block";
+                return false;
+            }
+            error.style.display = "none";
+            return true;
+        }
+
+        // EMAIL VALIDATION
+        function validateEmail() {
+            const email =
+                document.getElementById("email").value.trim();
+            const error =
+                document.getElementById("email-error");
+            const emailPattern =
+                /^[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+            if (email === "") {
+                error.textContent =
+                    "Please enter your email.";
+                error.style.display = "block";
+                return false;
+            }
+
+            if (!emailPattern.test(email)) {
+                error.textContent =
+                    "Please enter a valid email address.";
+                error.style.display = "block";
+                return false;
+            }
+            error.style.display = "none";
+            return true;
+        }
+
+        // PHONE VALIDATION
+        function validatePhone() {
+            const phone =
+                document.getElementById("phone").value.trim();
+            const error =
+                document.getElementById("phone-error");
+            const phonePattern =
+                /^[6-9][0-9]{9}$/;
+            if (phone === "") {
+                error.textContent =
+                    "Please enter your phone number.";
+                error.style.display = "block";
+                return false;
+            }
+
+            if (!phonePattern.test(phone)) {
+                error.textContent =
+                    "Enter a valid 10-digit phone number.";
+                error.style.display = "block";
+                return false;
+            }
+            error.style.display = "none";
+            return true;
+
+        }
+
+        // Gender VALIDATION
+        function validateGender() {
+            const Gender =
+                document.getElementsByName("Gender");
+            const error =
+                document.getElementById("Gender-error");
+            let selected = false;
+            for (let i = 0; i < Gender.length; i++) {
+                if (Gender[i].checked) {
+                    selected = true;
+                    break;
+                }
+            }
+            if (!selected) {
+                error.textContent =
+                    "Please select your Gender.";
+                error.style.display = "block";
+                return false;
+            }
+
+            error.style.display = "none";
+            return true;
+
+        }
+
+        // DATE OF BIRTH VALIDATION
+        function validateDOB() {
+            const day =
+                document.getElementById("day").value;
+            const month =
+                document.getElementById("month").value;
+            const year =
+                document.getElementById("year").value;
+            const error =
+                document.getElementById("dob-error");
+
+            if (day === "" ||
+                month === "" ||
+                year === "") {
+                error.textContent =
+                    "Please select your complete date of birth.";
+                error.style.display = "block";
+                return false;
+            }
+            error.style.display = "none";
+            return true;
+
+        }
+
+        // LANGUAGE VALIDATION
+        function validateLanguages() {
+            const languages =
+                document.getElementsByName("language");
+            const error =
+                document.getElementById("language-error");
+            let selected = false;
+            for (let i = 0; i < languages.length; i++) {
+                if (languages[i].checked) {
+                    selected = true;
+                    break;
+                }
+            }
+
+            if (!selected) {
+                error.textContent =
+                    "Please select at least one language.";
+                error.style.display = "block";
+                return false;
+            }
+            error.style.display = "none";
+            return true;
+
+        }
+
+        // ADDRESS VALIDATION
+        function validateAddress() {
+            const address =
+                document.getElementById("address").value.trim();
+            const error =
+                document.getElementById("address-error");
+            if (address === "") {
+                error.textContent =
+                    "Please enter your address.";
+                error.style.display = "block";
+                return false;
+            }
+
+            if (address.length < 10) {
+                error.textContent =
+                    "Address must be at least 10 characters.";
+                error.style.display = "block";
+                return false;
+            }
+            error.style.display = "none";
+            return true;
+        }
+    </script>
+</body>
+</html>
